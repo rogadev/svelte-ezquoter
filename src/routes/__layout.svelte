@@ -1,5 +1,6 @@
 <script>
-	import './app.css';
+	//import { supabase } from '../supabase/client.js';
+	//import './app.css';
 </script>
 
 <div>
