@@ -1,8 +1,8 @@
 <script>
-	import { supabase } from '../supabase/client.js';
-	import { user } from '../stores/sessionStore.js';
+	import { supabase } from '../../supabase/client.js';
+	import { user } from '../../stores/sessionStore.js';
 
-	import Logo from './Logo.svelte';
+	import Logo from '../../components/Logo.svelte';
 
 	let loading = true;
 	let username = null;
@@ -51,18 +51,6 @@
 				returning: 'minimal' // Don't return the value after inserting
 			});
 
-			if (error) throw error;
-		} catch (error) {
-			alert(error.message);
-		} finally {
-			loading = false;
-		}
-	};
-
-	const signOut = async () => {
-		try {
-			loading = true;
-			let { error } = await supabase.auth.signOut();
 			if (error) throw error;
 		} catch (error) {
 			alert(error.message);
