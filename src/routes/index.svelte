@@ -1,26 +1,23 @@
 <script>
+	/** Tailwind CSS */
+	import './app.css';
+
+	/** Svelte Imports*/
 	import { user } from '../stores/sessionStore.js';
 	import { supabase } from '../supabase/client.js';
+
+	/** Component Imports */
 	import Auth from '../components/Auth.svelte';
 	import Profile from '../components/Profile.svelte';
 
-	user.set(supabase.auth.user());
-
-	supabase.auth.onAuthStateChange((_, session) => {
-		user.set(session.user);
-	});
+	/** Auth Functions */
+	const logout = async () => {
+		await supabase.auth.signOut();
+	};
 </script>
 
-<div>
-	<h1>Dashboard</h1>
-	<ul>
-		<li>list</li>
-		<li>of</li>
-		<li>tasks</li>
-	</ul>
-	{#if $user}
-		<Profile />
-	{:else}
-		<Auth />
-	{/if}
-</div>
+{#if $user}
+	<Profile />
+{:else}
+	<Auth />
+{/if}
