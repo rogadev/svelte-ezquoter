@@ -1,5 +1,5 @@
 <script>
-	/** Svelte Imports */
+	/** Store Imports */
 	import { user } from '../stores/sessionStore.js';
 
 	/** Svelte Imports */
@@ -36,13 +36,12 @@
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center justify-between h-16">
 			<div class="flex items-center">
-				<div class="flex-shrink-0">
-					<img
-						class="h-8 w-8"
-						src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-						alt="Workflow"
-					/>
-				</div>
+				<a href="/">
+					<div class="flex-shrink-0 pb-1">
+						<i class="fa-solid fa-window-frame h-7 w-auto text-violet-600" />
+						<span class="text-violet-600 pl-2 text-4xl font-semibold cursor-default">ROGA</span>
+					</div>
+				</a>
 				{#if $user}
 					<div class="hidden md:block">
 						<div class="ml-10 flex items-baseline space-x-4">
@@ -74,7 +73,7 @@
 							<a
 								href="/new-quote"
 								class="text-blue-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-								><i class="fa-solid fa-circle-plus pr-1" /> Create Quote</a
+								><i class="fa-solid fa-circle-plus pr-1 " /> Create Quote</a
 							>
 						</div>
 					</div>
@@ -100,11 +99,7 @@
 									aria-haspopup="true"
 								>
 									<span class="sr-only">Open user menu</span>
-									<img
-										class="h-8 w-8 rounded-full"
-										src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt=""
-									/>
+									<i class="fa-solid fa-user h-7 w-auto text-white" />
 								</button>
 							</div>
 							{#if showProfileDropdown}
@@ -169,5 +164,5 @@
 	</div>
 
 	<!-- Mobile menu, show/hide based on menu state. -->
-	<MobileMenu on:logout={logout} user={$user} />
+	<MobileMenu on:logout={logout} />
 </nav>
