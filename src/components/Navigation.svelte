@@ -46,7 +46,7 @@
 				<a href="/">
 					<div class="flex-shrink-0 pb-1">
 						<i class="fa-solid fa-window-frame h-7 w-auto text-violet-600" />
-						<span class="text-violet-600 pl-2 text-4xl font-semibold cursor-default">ROGA</span>
+						<span class="text-violet-600 pl-2 text-4xl font-semibold cursor-default">EZ Q</span>
 					</div>
 				</a>
 				{#if $user}
