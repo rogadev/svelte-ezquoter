@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 
@@ -15,6 +17,8 @@
 </script>
 
 <div
+	in:fade
+	out:fade
 	class="fixed z-10 inset-0 overflow-y-auto"
 	aria-labelledby="modal-title"
 	role="dialog"
