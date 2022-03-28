@@ -11,7 +11,7 @@
 	}
 
 	function submit() {
-		// TODO handle submit
+		// TODO handle new pricesheet form submission
 	}
 </script>
 
