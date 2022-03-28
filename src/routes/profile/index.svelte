@@ -2,7 +2,6 @@
 	import { supabase } from '../../supabase/client.js';
 	import { user } from '../../stores/sessionStore.js';
 
-	import Logo from '../../components/Logo.svelte';
 	import LoadingSpinner from '../../components/LoadingSpinner.svelte';
 
 	let loading = true;
