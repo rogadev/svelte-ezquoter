@@ -45,19 +45,20 @@
 			<div class="flex items-center">
 				<a href="/">
 					<div class="flex-shrink-0 pb-1">
-						<i class="fa-solid fa-window-frame h-7 w-auto text-violet-600" />
-						<span class="text-violet-600 pl-2 text-4xl font-semibold cursor-default">EZ Q</span>
+						<i class="fa-solid fa-window-frame h-7 w-auto text-blue-600" />
+						<span class="text-blue-600 pl-2 text-4xl font-semibold cursor-default">EZ Q</span>
 					</div>
 				</a>
 				{#if $user}
 					<div class="hidden md:block">
 						<div class="ml-10 flex items-baseline space-x-4">
-							<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+							<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white"-->
 							<a
 								href="/"
 								class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-								aria-current="page">Dashboard</a
-							>
+								aria-current="page"
+								>Dashboard
+							</a>
 
 							<a
 								href="/pricesheets"
@@ -174,3 +175,10 @@
 	<!-- Mobile menu, show/hide based on menu state. -->
 	<MobileMenu on:logout={logout} showMenu={showMobileMenu} />
 </nav>
+
+<style>
+	.active {
+		color: #fff;
+		background-color: #007bff;
+	}
+</style>
