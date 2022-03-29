@@ -4,14 +4,12 @@
 
 	import LoadingSpinner from '../../components/LoadingSpinner.svelte';
 
-	let loading = true;
 	let username = null;
 	let website = null;
 	let avatar_url = null;
 
 	const getProfile = async () => {
 		try {
-			loading = true;
 			const user = supabase.auth.user();
 
 			let { data, error, status } = await supabase
@@ -30,14 +28,11 @@
 		} catch (error) {
 			console.error(error.message);
 		} finally {
-			loading = false;
 		}
 	};
 
 	const updateProfile = async () => {
 		try {
-			loading = true;
-
 			const updates = {
 				// @ts-ignore
 				id: $user.id,
@@ -55,7 +50,6 @@
 		} catch (error) {
 			alert(error.message);
 		} finally {
-			loading = false;
 		}
 	};
 </script>
