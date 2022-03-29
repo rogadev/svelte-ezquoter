@@ -175,10 +175,3 @@
 	<!-- Mobile menu, show/hide based on menu state. -->
 	<MobileMenu on:logout={logout} showMenu={showMobileMenu} />
 </nav>
-
-<style>
-	.active {
-		color: #fff;
-		background-color: #007bff;
-	}
-</style>
